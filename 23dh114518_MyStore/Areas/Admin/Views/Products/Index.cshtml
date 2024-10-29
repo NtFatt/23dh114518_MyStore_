@@ -4,10 +4,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+<head>
+    <style>
+        img{
+            height:150px;
+            max-width:150px;
+        }
+    </style>
+</head>
 
-<h2 class="bg-success">DANH SÁCH SẢN PHẨM</h2>
+<h2 class="bg-success container-fluid">DANH SÁCH SẢN PHẨM</h2>
 
- <table class="table bg-info col-md-6">
+ <table class="table bg-info container-fluid">
      <tr>
          <th class="bg-success">Tên sản phẩm</th>
          <th class="bg-success">Hình ảnh</th>
@@ -20,7 +28,7 @@
      {
          <tr>
              <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
-             <td>@Html.DisplayFor(modelItem => item.ProductImage)</td>
+             <td><img src="@Html.DisplayFor(modelItem => item.ProductImage)"/></td>
              <td>@Html.DisplayFor(modelItem => item.ProductPrice)</td>
              <td>@Html.DisplayFor(modelItem => item.Category.CategoryName)</td>
              <td>
