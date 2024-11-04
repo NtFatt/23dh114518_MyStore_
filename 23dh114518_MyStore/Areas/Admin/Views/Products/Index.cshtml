@@ -17,8 +17,8 @@
 
  <table class="table bg-info container-fluid">
      <tr>
-         <th class="bg-success">Tên sản phẩm</th>
          <th class="bg-success">Hình ảnh</th>
+         <th class="bg-success">Tên sản phẩm</th>
          <th class="bg-success">Đơn giá</th>
          <th class="bg-success">Danh mục</th>
          <th class="bg-success"></th>
@@ -27,8 +27,8 @@
      @foreach (var item in Model)
      {
          <tr>
+             <td><img src="@Html.DisplayFor(modelItem => item.ProductImage)" /></td>
              <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
-             <td><img src="@Html.DisplayFor(modelItem => item.ProductImage)"/></td>
              <td>@Html.DisplayFor(modelItem => item.ProductPrice)</td>
              <td>@Html.DisplayFor(modelItem => item.Category.CategoryName)</td>
              <td>
@@ -39,7 +39,9 @@
          </tr>
      }
  </table>
-<p>
-    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })
-</p>
+<div class="form-group">
+    <div class="col-md-offset-8 col-md-4">
+        @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
 
